@@ -1,0 +1,75 @@
+@page "/Medidores"
+
+<PageTitle>Lista Medidores</PageTitle>
+
+@using ProyectWaterUi.Data.Models;
+@using System.Net.Http;
+@using System.Net.Http.Json;
+@inject HttpClient http
+
+<div class="title">
+    <div class="title_content">
+        <h1>Medidores</h1>
+    </div>
+    <div class="title_button">
+        <a href="/Medidores/add" class="btn btn-success">
+        <i class="oi oi-plus"></i>
+        &nbsp
+        Agregar
+        </a>
+    </div>
+</div>
+
+
+
+
+
+
+@if (medidor == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Marca</th>
+                <th>Provedor</th>
+                <th>Opciones</th>
+                
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Medidor in medidor)
+            {
+                <tr>
+                    <td>@Medidor.Marca</td>
+                    <td>@Medidor.Proveedor</td>
+                    <td>
+                        <span class="Icon">
+                            <a href="/Medidores/update/@Medidor.Id_Medidor" class="oi oi-pencil" title="Editar">
+                            </a>
+                        </span>
+                        &nbsp
+                        <span class="Icon">
+                            <a href="/Medidores/delete/@Medidor.Id_Medidor" class="oi oi-trash" title="Borrar">
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private readonly string api = "api/Medidor";
+
+    private IList<Medidor>? medidor;
+
+    protected override async Task OnInitializedAsync()
+    {
+        medidor = await http.GetFromJsonAsync<IList<Medidor>>(api);
+    }
+}

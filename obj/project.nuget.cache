@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "MHZJranHrIMhEWExOe1EZSH5BuCeLloFFry37zWy2nv9TIfmI67CcqZL7AYUgTgQO3cAoqrYz3rZkHmuyBQXCA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\angel\\ProyectWaterUi\\ProyectWaterUi\\ProyectWaterUi.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\angel\\.nuget\\packages\\libsassbuilder\\2.0.1\\libsassbuilder.2.0.1.nupkg.sha512"
+  ],
+  "logs": []
+}

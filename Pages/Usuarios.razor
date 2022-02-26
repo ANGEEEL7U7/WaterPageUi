@@ -1,0 +1,77 @@
+@page "/Usuarios"
+
+<PageTitle>Lista Ususarios</PageTitle>
+
+@using ProyectWaterUi.Data.Models;
+@using System.Net.Http;
+@using System.Net.Http.Json;
+@inject HttpClient http
+
+
+<div class="title">
+    <div class="title_content">
+        <h1>Usuario</h1>
+    </div>
+    <div class="title_button">
+        <a href="/Medidores/add" class="btn btn-success">
+        <i class="oi oi-plus"></i>
+        &nbsp
+        Agregar
+        </a>
+    </div>
+</div>
+
+
+@if (usuario == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Nombre</th>
+                <th>Domicilio</th>
+                <th>Nacimiento</th>
+                <th>Matricula Proveedor</th>
+                <th>Correo</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Usuario in usuario)
+            {
+                <tr>
+                    <td>@Usuario.Nombre</td>
+                    <td>@Usuario.domicilio</td>
+                    <td>@Usuario.Nacimiento.ToShortDateString()</td>
+                    <td>@Usuario.Id_Medidor</td>
+                    <td>@Usuario.Correo</td>
+                    <td>
+                        <span class="Icon">
+                            <a href="/Medidores/update/@Usuario.Id_us" class="oi oi-pencil" title="Editar">
+                            </a>
+                        </span>
+                        &nbsp
+                        <span class="Icon">
+                            <a href="/Medidor/delete/@Usuario.Id_us" class="oi oi-trash" title="Borrar">
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private readonly string api = "api/Usuario";
+
+    private IList<Usuario>? usuario;
+
+    protected override async Task OnInitializedAsync()
+    {
+        usuario = await http.GetFromJsonAsync<IList<Usuario>>(api);
+    }
+}

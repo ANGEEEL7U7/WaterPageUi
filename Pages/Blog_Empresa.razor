@@ -1,0 +1,79 @@
+@page "/BlogEmpresa"
+
+<PageTitle>BlogsEmpresas</PageTitle>
+
+@using ProyectWaterUi.Data.Models;
+@using System.Net.Http;
+@using System.Net.Http.Json;
+@inject HttpClient http
+
+
+<div class="title">
+    <div class="title_content">
+        <h1>BlogEmpresas</h1>
+    </div>
+    <div class="title_button">
+        <a href="/Medidores/add" class="btn btn-success">
+        <i class="oi oi-plus"></i>
+        &nbsp
+        Agregar
+        </a>
+    </div>
+</div>
+
+
+@if (blogempresas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Foto</th>
+                <th>Uso de Agua</th>
+                <th>Ubicacion</th>
+                <th>Titulo</th>
+                <th>Matricula de Empresa</th>
+                <th>Matricula Medidor</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var BlogEmpresa in blogempresas)
+            {
+                <tr>
+                    <td>@BlogEmpresa.UrlFoto_E</td>
+                    <td>@BlogEmpresa.Uso_Agua_E</td>
+                    <td>@BlogEmpresa.Ubicacion_E</td>                    
+                    <td>@BlogEmpresa.Opinion_E</td>
+                    <td>@BlogEmpresa.Id_empresa</td>
+                    <td>@BlogEmpresa.Id_Medidor_fk_E</td>
+                    <td>
+                        <span class="Icon">
+                            <a href="/Medidores/update/@BlogEmpresa.Id_BlogEmpresa" class="oi oi-pencil" title="Editar">
+                            </a>
+                        </span>
+                        &nbsp
+                        <span class="Icon">
+                            <a href="/Medidor/delete/@BlogEmpresa.Id_BlogEmpresa" class="oi oi-trash" title="Borrar">
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private readonly string api = "api/BlogEmpresas";
+
+    private IList<BlogEmpresa>? blogempresas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        blogempresas = await http.GetFromJsonAsync<IList<BlogEmpresa>>(api);
+    }
+}

@@ -1,0 +1,53 @@
+@page "/Medidores/add"
+@page "/Medidores/update/{Id_Medidor:int}"
+
+<EditForm Model="@medidor"  OnSubmit=@Save>
+   
+        <div class="mb-2">
+            <label class="form-label" for="Marca">Marca</label>
+            <InputText class="form-control" @bind-Value="@medidor.Marca" id="Marca"> </InputText>
+        </div>
+        <div class="mb-2">
+            <label class="form-label" for="Proveedor">Proveedor</label>
+            <InputText class="form-control" @bind-Value="@medidor.Proveedor" id="Proveedor"> </InputText>
+        </div>
+        <button type="submit" class="btn btn-primary">
+            guardar
+        </button>
+        <a href="/Medidores" class="btn btn-danger"> Cancelar</a>
+    
+</EditForm>
+@using ProyectWaterUi.Data.Models;
+@using System.Net.Http;
+@using System.Net.Http.Json;
+@inject HttpClient http
+@inject NavigationManager NavigationManager
+
+@code {
+    [Parameter]
+    public int? Id_Medidor {get; set;} = 0;
+    public bool isUpdate {get; set;} = false;
+    IList<Medidor>? medidores;
+    Medidor medidor = new Medidor();
+
+        protected override async Task OnInitializedAsync(){
+            medidores = await http.GetFromJsonAsync<IList<Medidor>>(requestUri:"/api/Medidor");
+                isUpdate = Id_Medidor != null;
+            if(isUpdate){
+                var response = await http.GetFromJsonAsync<Medidor>(requestUri: $"/api/Medidor/{Id_Medidor}");
+                    if(response != null){
+                        medidor = response;
+                    }
+            }
+            }
+        private async Task Save(){
+            HttpResponseMessage response;
+            if(isUpdate){
+                response = await http.PutAsJsonAsync<Medidor>(requestUri: $"/api/Medidor/{Id_Medidor}", medidor);
+            }else{
+                response = await http.PostAsJsonAsync<Medidor>(requestUri:"/api/Medidor",medidor);
+            }
+                NavigationManager.NavigateTo("/Medidores");
+        }
+}
+

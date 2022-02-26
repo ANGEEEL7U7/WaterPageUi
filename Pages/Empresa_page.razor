@@ -1,0 +1,79 @@
+@page "/Empresa"
+
+<PageTitle>Empresas</PageTitle>
+
+@using ProyectWaterUi.Data.Models;
+@using System.Net.Http;
+@using System.Net.Http.Json;
+@inject HttpClient http
+
+
+<div class="title">
+    <div class="title_content">
+        <h1>Lista de Empresas</h1>
+    </div>
+    <div class="title_button">
+        <a href="/Medidores/add" class="btn btn-success">
+        <i class="oi oi-plus"></i>
+        &nbsp
+        Agregar
+        </a>
+    </div>
+</div>
+
+
+@if (empresas == null)
+{
+    <p><em>Loading...</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Rfc</th>
+                <th>Uso de Agua</th>
+                <th>Titulo</th>
+                <th>Ubicacion</th>
+                <th>Matricula de medidor</th>
+                <th>Usuario</th>
+                <th>Opciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var Empresas in empresas)
+            {
+                <tr>
+                    <td>@Empresas.Rfc</td>
+                    <td>@Empresas.Nombre_E</td>
+                    <td>@Empresas.Ubicacion_E</td>                    
+                    <td>@Empresas.Fecha_Regristro.ToShortDateString()</td>
+                    <td>@Empresas.Id_Medidor_E</td>
+                    <td>@Empresas.Correo_E</td>
+                    <td>
+                        <span class="Icon">
+                            <a href="/Medidores/update/@Empresas.Id_Empresa" class="oi oi-pencil" title="Editar">
+                            </a>
+                        </span>
+                        &nbsp
+                        <span class="Icon">
+                            <a href="/Medidor/delete/@Empresas.Id_Empresa" class="oi oi-trash" title="Borrar">
+                            </a>
+                        </span>
+                    </td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private readonly string api = "api/Empresas";
+
+    private IList<Empresas>? empresas;
+
+    protected override async Task OnInitializedAsync()
+    {
+        empresas = await http.GetFromJsonAsync<IList<Empresas>>(api);
+    }
+}

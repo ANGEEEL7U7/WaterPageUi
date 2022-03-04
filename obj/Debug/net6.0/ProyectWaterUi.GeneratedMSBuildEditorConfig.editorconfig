@@ -19,8 +19,16 @@ build_property._RazorSourceGeneratorDebug =
 build_metadata.AdditionalFiles.TargetPath = QXBwLnJhem9y
 build_metadata.AdditionalFiles.CssScope = 
 
+[C:/Users/angel/ProyectWaterUi/ProyectWaterUi/Pages/AddUpdateBlog.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVXBkYXRlQmxvZy5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/angel/ProyectWaterUi/ProyectWaterUi/Pages/AddUpdateMedidor.razor]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVXBkYXRlTWVkaWRvci5yYXpvcg==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/angel/ProyectWaterUi/ProyectWaterUi/Pages/AddUpdateUsuario.razor]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcQWRkVXBkYXRlVXN1YXJpby5yYXpvcg==
 build_metadata.AdditionalFiles.CssScope = 
 
 [C:/Users/angel/ProyectWaterUi/ProyectWaterUi/Pages/Blog.razor]

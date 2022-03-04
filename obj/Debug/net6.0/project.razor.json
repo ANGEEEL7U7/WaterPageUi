@@ -12,35 +12,55 @@
   "ProjectWorkspaceState": {
     "TagHelpers": [
       {
-        "HashCode": -1668650071,
+        "HashCode": -1888506455,
         "Kind": "Components.Component",
-        "Name": "ProyectWaterUi.Pages.Blog",
+        "Name": "ProyectWaterUi.Pages.AddUpdateMedidor",
         "AssemblyName": "ProyectWaterUi",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "Blog"
+            "TagName": "AddUpdateMedidor"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id_Medidor",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id_Medidor"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "ProyectWaterUi.Pages.Blog"
+          "Common.TypeName": "ProyectWaterUi.Pages.AddUpdateMedidor"
         }
       },
       {
-        "HashCode": 1416181132,
+        "HashCode": -1580574307,
         "Kind": "Components.Component",
-        "Name": "ProyectWaterUi.Pages.Blog",
+        "Name": "ProyectWaterUi.Pages.AddUpdateMedidor",
         "AssemblyName": "ProyectWaterUi",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "ProyectWaterUi.Pages.Blog"
+            "TagName": "ProyectWaterUi.Pages.AddUpdateMedidor"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id_Medidor",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id_Medidor"
+            }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "ProyectWaterUi.Pages.Blog",
+          "Common.TypeName": "ProyectWaterUi.Pages.AddUpdateMedidor",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -107,6 +127,59 @@
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
           "Common.TypeName": "ProyectWaterUi.Pages.Counter",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 1845453537,
+        "Kind": "Components.Component",
+        "Name": "ProyectWaterUi.Pages.DeleteMedidor",
+        "AssemblyName": "ProyectWaterUi",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "DeleteMedidor"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id_Medidor",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "Id_Medidor"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "ProyectWaterUi.Pages.DeleteMedidor"
+        }
+      },
+      {
+        "HashCode": 290266601,
+        "Kind": "Components.Component",
+        "Name": "ProyectWaterUi.Pages.DeleteMedidor",
+        "AssemblyName": "ProyectWaterUi",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ProyectWaterUi.Pages.DeleteMedidor"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id_Medidor",
+            "TypeName": "System.Int32",
+            "Metadata": {
+              "Common.PropertyName": "Id_Medidor"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "ProyectWaterUi.Pages.DeleteMedidor",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -210,39 +283,6 @@
         }
       },
       {
-        "HashCode": 2100265008,
-        "Kind": "Components.Component",
-        "Name": "ProyectWaterUi.Pages.Usuarios",
-        "AssemblyName": "ProyectWaterUi",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "Usuarios"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "ProyectWaterUi.Pages.Usuarios"
-        }
-      },
-      {
-        "HashCode": -1337129942,
-        "Kind": "Components.Component",
-        "Name": "ProyectWaterUi.Pages.Usuarios",
-        "AssemblyName": "ProyectWaterUi",
-        "CaseSensitive": true,
-        "TagMatchingRules": [
-          {
-            "TagName": "ProyectWaterUi.Pages.Usuarios"
-          }
-        ],
-        "Metadata": {
-          "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "ProyectWaterUi.Pages.Usuarios",
-          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
-        }
-      },
-      {
         "HashCode": 914620888,
         "Kind": "Components.Component",
         "Name": "ProyectWaterUi.Pages.Medidores",
@@ -276,55 +316,174 @@
         }
       },
       {
-        "HashCode": -1888506455,
+        "HashCode": 2100265008,
         "Kind": "Components.Component",
-        "Name": "ProyectWaterUi.Pages.AddUpdateMedidor",
+        "Name": "ProyectWaterUi.Pages.Usuarios",
         "AssemblyName": "ProyectWaterUi",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "AddUpdateMedidor"
-          }
-        ],
-        "BoundAttributes": [
-          {
-            "Kind": "Components.Component",
-            "Name": "Id_Medidor",
-            "TypeName": "System.Int32?",
-            "Metadata": {
-              "Common.PropertyName": "Id_Medidor"
-            }
+            "TagName": "Usuarios"
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "ProyectWaterUi.Pages.AddUpdateMedidor"
+          "Common.TypeName": "ProyectWaterUi.Pages.Usuarios"
         }
       },
       {
-        "HashCode": -1580574307,
+        "HashCode": -1337129942,
         "Kind": "Components.Component",
-        "Name": "ProyectWaterUi.Pages.AddUpdateMedidor",
+        "Name": "ProyectWaterUi.Pages.Usuarios",
         "AssemblyName": "ProyectWaterUi",
         "CaseSensitive": true,
         "TagMatchingRules": [
           {
-            "TagName": "ProyectWaterUi.Pages.AddUpdateMedidor"
+            "TagName": "ProyectWaterUi.Pages.Usuarios"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "ProyectWaterUi.Pages.Usuarios",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1668650071,
+        "Kind": "Components.Component",
+        "Name": "ProyectWaterUi.Pages.Blog",
+        "AssemblyName": "ProyectWaterUi",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "Blog"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "ProyectWaterUi.Pages.Blog"
+        }
+      },
+      {
+        "HashCode": 1416181132,
+        "Kind": "Components.Component",
+        "Name": "ProyectWaterUi.Pages.Blog",
+        "AssemblyName": "ProyectWaterUi",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ProyectWaterUi.Pages.Blog"
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "ProyectWaterUi.Pages.Blog",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": 2015392583,
+        "Kind": "Components.Component",
+        "Name": "ProyectWaterUi.Pages.AddUpdateUsuario",
+        "AssemblyName": "ProyectWaterUi",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "AddUpdateUsuario"
           }
         ],
         "BoundAttributes": [
           {
             "Kind": "Components.Component",
-            "Name": "Id_Medidor",
+            "Name": "Id_us",
             "TypeName": "System.Int32?",
             "Metadata": {
-              "Common.PropertyName": "Id_Medidor"
+              "Common.PropertyName": "Id_us"
             }
           }
         ],
         "Metadata": {
           "Runtime.Name": "Components.IComponent",
-          "Common.TypeName": "ProyectWaterUi.Pages.AddUpdateMedidor",
+          "Common.TypeName": "ProyectWaterUi.Pages.AddUpdateUsuario"
+        }
+      },
+      {
+        "HashCode": 1640228429,
+        "Kind": "Components.Component",
+        "Name": "ProyectWaterUi.Pages.AddUpdateUsuario",
+        "AssemblyName": "ProyectWaterUi",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ProyectWaterUi.Pages.AddUpdateUsuario"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id_us",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id_us"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "ProyectWaterUi.Pages.AddUpdateUsuario",
+          "Components.NameMatch": "Components.FullyQualifiedNameMatch"
+        }
+      },
+      {
+        "HashCode": -1550543209,
+        "Kind": "Components.Component",
+        "Name": "ProyectWaterUi.Pages.AddUpdateBlog",
+        "AssemblyName": "ProyectWaterUi",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "AddUpdateBlog"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id_Blog",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id_Blog"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "ProyectWaterUi.Pages.AddUpdateBlog"
+        }
+      },
+      {
+        "HashCode": -1869782732,
+        "Kind": "Components.Component",
+        "Name": "ProyectWaterUi.Pages.AddUpdateBlog",
+        "AssemblyName": "ProyectWaterUi",
+        "CaseSensitive": true,
+        "TagMatchingRules": [
+          {
+            "TagName": "ProyectWaterUi.Pages.AddUpdateBlog"
+          }
+        ],
+        "BoundAttributes": [
+          {
+            "Kind": "Components.Component",
+            "Name": "Id_Blog",
+            "TypeName": "System.Int32?",
+            "Metadata": {
+              "Common.PropertyName": "Id_Blog"
+            }
+          }
+        ],
+        "Metadata": {
+          "Runtime.Name": "Components.IComponent",
+          "Common.TypeName": "ProyectWaterUi.Pages.AddUpdateBlog",
           "Components.NameMatch": "Components.FullyQualifiedNameMatch"
         }
       },
@@ -16845,6 +17004,11 @@
       "FileKind": "component"
     },
     {
+      "FilePath": "c:\\Users\\angel\\ProyectWaterUi\\ProyectWaterUi\\Pages\\DeleteMedidor.razor",
+      "TargetPath": "Pages\\DeleteMedidor.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "c:\\Users\\angel\\ProyectWaterUi\\ProyectWaterUi\\Shared\\SurveyPrompt.razor",
       "TargetPath": "Shared\\SurveyPrompt.razor",
       "FileKind": "component"
@@ -16885,6 +17049,11 @@
       "FileKind": "component"
     },
     {
+      "FilePath": "c:\\Users\\angel\\ProyectWaterUi\\ProyectWaterUi\\Pages\\AddUpdateBlog.razor",
+      "TargetPath": "Pages\\AddUpdateBlog.razor",
+      "FileKind": "component"
+    },
+    {
       "FilePath": "c:\\Users\\angel\\ProyectWaterUi\\ProyectWaterUi\\Pages\\Blog.razor",
       "TargetPath": "Pages\\Blog.razor",
       "FileKind": "component"
@@ -16912,6 +17081,11 @@
     {
       "FilePath": "c:\\Users\\angel\\ProyectWaterUi\\ProyectWaterUi\\Pages\\Counter.razor",
       "TargetPath": "Pages\\Counter.razor",
+      "FileKind": "component"
+    },
+    {
+      "FilePath": "c:\\Users\\angel\\ProyectWaterUi\\ProyectWaterUi\\Pages\\AddUpdateUsuario.razor",
+      "TargetPath": "Pages\\AddUpdateUsuario.razor",
       "FileKind": "component"
     }
   ],

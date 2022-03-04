@@ -13,7 +13,7 @@
         <h1>Blog</h1>
     </div>
     <div class="title_button">
-        <a href="/Medidores/add" class="btn btn-success">
+        <a href="/Blogs/add" class="btn btn-success">
         <i class="oi oi-plus"></i>
         &nbsp
         Agregar
@@ -44,7 +44,7 @@ else
             @foreach (var Blogs in blogs)
             {
                 <tr>
-                    <td><img src=@Blogs.UrlFoto alt="" width="100" height="100"></td>
+                    <td><img src="@Blogs.UrlFoto" width="100" height="100"></td>
                     <td>@Blogs.Uso_Agua</td>
                     <td>@Blogs.Opinion</td>                    
                     <td>@Blogs.Ubicacion</td>
@@ -52,12 +52,12 @@ else
                     <td>@Blogs.Id_usuario</td>
                     <td>
                         <span class="Icon">
-                            <a href="/Medidores/update/@Blogs.Id_Blog" class="oi oi-pencil" title="Editar">
+                            <a href="/Blogs/update/@Blogs.Id_Blog" class="oi oi-pencil" title="Editar">
                             </a>
                         </span>
                         &nbsp
                         <span class="Icon">
-                            <a href="/Medidor/delete/@Blogs.Id_Blog" class="oi oi-trash" title="Borrar">
+                            <a href="/Blogs/delete/@Blogs.Id_Blog" class="oi oi-trash" title="Borrar">
                             </a>
                         </span>
                     </td>

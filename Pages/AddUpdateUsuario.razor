@@ -1,0 +1,62 @@
+@page "/Usuarios/add"
+@page "/Usuarios/update/{Id_us:int}"
+
+<EditForm Model="@usuario" OnSubmit=@Save>
+<div class="mb-2">
+    <label for="Nombre" class="form-label">Nombre:</label>
+    <InputText class="form-control" id="Nombre" @bind-Value="@usuario.Nombre"></InputText>
+</div>
+<div class="mb-2">
+    <label for="domicilio" class="form-label">Domicilio:</label>
+    <InputText class="form-control" id="Domicilio" @bind-Value="@usuario.domicilio"></InputText>
+</div>
+<div class="mb-2">
+    <label for="Nacimiento" class="form-label">Fecha de nacimiento:</label>
+    <InputDate class="form-control" id="Nacimiento" @bind-Value="@usuario.Nacimiento"></InputDate>
+</div>
+<div class="mb-2">
+    <label for="Id_Medidor" class="form-label">Matricula del Medidor de agua:</label>
+    <InputNumber class="form-control" id="Id_Medidor" @bind-Value="@usuario.Id_Medidor"></InputNumber>
+</div>
+<div class="mb-2">
+    <label for="Correo" class="form-label">Correo Electronico:</label>
+    <input type="email" id="Correo" class="form-control" @bind-value="@usuario.Correo">
+</div>
+<button type="submit" class="btn btn-primary">
+    guardar
+</button>
+<a href="/Usuarios" class="btn btn-danger">Cancelar</a>
+</EditForm>
+@using ProyectWaterUi.Data.Models;
+@using System.Net.Http;
+@using System.Net.Http.Json;
+@inject HttpClient http
+@inject NavigationManager NavigationManager
+
+@code {
+    [Parameter]
+    public int? Id_us {get; set;} = 0;
+    public bool isUpdate {get; set;} = false;
+
+    IList<Usuario>? usuarios;
+    Usuario usuario = new Usuario();
+    protected override async Task OnInitializedAsync(){
+        usuarios = await http.GetFromJsonAsync<IList<Usuario>>(requestUri:"/api/Usuario");
+            isUpdate = Id_us != null;
+        if(isUpdate){
+            var response = await http.GetFromJsonAsync<Usuario>(requestUri: $"/api/Usuario/{Id_us}");
+                if(response != null){
+                    usuario = response;
+                }
+        }
+    }
+    private async Task Save(){
+        HttpResponseMessage response;
+        if(isUpdate){
+            response = await http.PutAsJsonAsync<Usuario>(requestUri: $"/api/Usuario/{Id_us}", usuario);
+        }else{
+            response = await http.PostAsJsonAsync<Usuario>(requestUri:"/api/Usuario",usuario);
+        }
+        NavigationManager.NavigateTo("/Usuarios");
+    }
+}

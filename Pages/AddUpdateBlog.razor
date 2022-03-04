@@ -1,0 +1,70 @@
+@page "/Blogs/add"
+@page "/Blogs/update/{Id_Blog:int}"
+
+<EditForm Model="@blog" OnSubmit="@Save">
+<div class="mb-2">
+    <label for="UrlFoto">Fotografia</label>
+    <InputText class="form-control" id="UrlFoto" @bind-Value="@blog.UrlFoto"></InputText>
+</div>
+<div class="mb-2">
+    <label for="Uso_Agua" class="form-label">Uso_Agua</label>
+    <InputNumber class="form-control" id="Uso_Agua" @bind-Value="@blog.Uso_Agua"></InputNumber>
+</div>
+
+<div class="mb-2">
+    <label for="Ubicacion" class="form-label">Ubicacion</label>
+    <InputText class="form-control" id="Ubicacion" @bind-Value="blog.Ubicacion"></InputText>
+</div>
+<div class="mb-2">
+    <label for="Opinion" class="form-label">Comentario</label>
+    <InputTextArea class="form-control" id="Opinion" @bind-Value="blog.Opinion"></InputTextArea>
+</div>
+<div class="mb-2">
+    <label for="Usuario" class="form-label">Usuario</label>
+    <InputNumber class="form-control" id="Usuario" @bind-Value="blog.Id_usuario"></InputNumber>
+</div>
+<div class="mb-2">
+    <label for="Id_Medidor_fk" class="form-label">Matricula del medidor</label>
+    <InputNumber class="form-control" id="Id_Medidor_fk" @bind-Value="blog.Id_Medidor_fk"></InputNumber>
+</div>
+
+<button type="submit" class="btn btn-primary" >
+            guardar
+        </button>
+        <a href="/Blogs" class="btn btn-danger"> Cancelar</a>
+</EditForm>
+@using ProyectWaterUi.Data.Models;
+@using System.Net.Http;
+@using System.Net.Http.Json;
+@inject HttpClient http
+@inject NavigationManager NavigationManager
+
+@code{
+    [Parameter]
+    public int? Id_Blog {get; set;} = 0;
+    public bool isUpdate {get; set;} = false;
+
+    IList<Blogs>? blogs;
+    Blogs blog = new Blogs();
+
+     protected override async Task OnInitializedAsync(){
+        blogs = await http.GetFromJsonAsync<IList<Blogs>>(requestUri:"/api/Blog");
+            isUpdate = Id_Blog != null;
+        if(isUpdate){/*marca error en la linea 54*/
+            var response = await http.GetFromJsonAsync<Blogs>(requestUri: $"/api/Blog/{Id_Blog}");
+                if(response != null){
+                    blog = response;
+                }
+        }
+    }
+    private async Task Save(){
+        HttpResponseMessage response;
+        if(isUpdate){
+            response = await http.PutAsJsonAsync<Blogs>(requestUri: $"/api/Blog/{Id_Blog}", blog);
+        }else{
+            response = await http.PostAsJsonAsync<Blogs>(requestUri:"/api/Blog",blog);
+        }
+        NavigationManager.NavigateTo("/Usuarios");
+    }
+   
+}
